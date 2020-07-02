@@ -3,7 +3,7 @@ import 'planet.dart';
 
 class PlanetarySystem {
 
-  final Random _random = Random();
+  // final Random _random = Random();
   String name;
   List<Planet> planets;
 

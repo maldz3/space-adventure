@@ -5,7 +5,7 @@ import 'package:dart_space_adventure/dart_space_adventure.dart';
 
 void main(List<String> arguments) { 
   final jsonMap = getJson(arguments[0]);
-  final systemName = jsonMap['name'];
+  final systemName = getSystemName(jsonMap);
   final planetData = getPlanetData(jsonMap);
   SpaceAdventure(
     planetarySystem: PlanetarySystem(
@@ -27,6 +27,8 @@ Map<String, dynamic> getJson(String arg) {
   return jsonMap;
 }
 
+String getSystemName(Map<String, dynamic> jsonMap) => jsonMap['name'];
+
 Map<dynamic, dynamic> getPlanetData(Map<String, dynamic> jsonMap) {
   final planetData = {};
   for(var e in jsonMap['planets']) {
@@ -34,6 +36,10 @@ Map<dynamic, dynamic> getPlanetData(Map<String, dynamic> jsonMap) {
   }
   return planetData;
 }
+
+
+
+
 
 
 
